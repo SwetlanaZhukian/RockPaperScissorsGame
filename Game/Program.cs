@@ -34,7 +34,7 @@ namespace Game
             string userMove = "";
             string key = GenerateRandomCryptographicKey(32);
             string computerMove = GenerateRandomMove(args);
-  
+
             Console.WriteLine("HMAC: " + GeherateHMAC(key, computerMove));
             Console.WriteLine("Available moves:");
 
@@ -43,7 +43,7 @@ namespace Game
             {
                 moves.Add(move);
             }
-             
+
             foreach (string s in moves)
             {
                 Console.WriteLine(index + " - " + s);
@@ -83,7 +83,7 @@ namespace Game
 
             Console.WriteLine("Computer move: " + computerMove);
 
-            var nextItem= moves.Find(computerMove).Next;
+            var nextItem = moves.Find(computerMove).Next;
             var previousItem = moves.Find(computerMove).Previous;
 
             for (int i = 0; i < (moves.Count - 1) / 2; i++)
@@ -99,7 +99,7 @@ namespace Game
                     Console.WriteLine("You win!");
                     break;
                 }
-                 if (previousItem == moves.Find(userMove))
+                if (previousItem == moves.Find(userMove))
                 {
                     Console.WriteLine("You lose!");
                     break;
